@@ -27,4 +27,20 @@
  */
 export function checkPasswordStrength(password) {
   // Your code here
+
+  let criteriaLevel = 0;
+
+  if(typeof password !== "string" || password.length === 0) return "weak";
+
+  if(password.length >= 8){
+    criteriaLevel+=1;
+  }
+  else if (password.toLowerCase() !== password) {
+    criteriaLevel+=2;
+  }
+  else if (password.toUpperCase() !== password) {
+    criteriaLevel+=3;
+  }
+  
+
 }
